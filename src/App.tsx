@@ -19,7 +19,7 @@ const GATEKEEPER_NETWORK = "ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6";
 const client = createClient(
     getDefaultClient({
         appName: 'Civic Pass Eth demo',
-        chains: [mainnet, polygon, optimism, arbitrum, goerli, polygonMumbai, sepolia, optimismGoerli, arbitrumGoerli],
+        chains: [goerli, mainnet, polygon, optimism, arbitrum, polygonMumbai, sepolia, optimismGoerli, arbitrumGoerli],
     })
 )
 
@@ -27,14 +27,13 @@ const Content = () => {
     const { address, isConnected } = useAccount()
     const { data: ensAvatar } = useEnsAvatar({ address })
     const { data: ensName } = useEnsName({ address })
-    return <header className="App-header">
-
+    return <>
         { ensAvatar ?
             <img src={ensAvatar} className="App-logo" alt="logo" /> :
             <img src={logo} className="App-logo" alt="logo" /> }
         { ensName ? <p>{ensName}</p> : <p>{address}</p> }
         {isConnected && <IdentityButton/>}
-    </header>
+    </>
 }
 
 const Gateway = () => {
@@ -57,8 +56,10 @@ function App() {
         <div className="App">
             <WagmiConfig client={client}>
                 <ConnectKitProvider theme="auto">
-                    <ConnectKitButton />
-                    <Gateway />
+                    <header className="App-header">
+                        <ConnectKitButton />
+                        <Gateway />
+                    </header>
                 </ConnectKitProvider>
             </WagmiConfig>
         </div>
