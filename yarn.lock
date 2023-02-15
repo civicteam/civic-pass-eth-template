@@ -1085,16 +1085,16 @@
     ramda "^0.27.1"
     styled-components "^5.3.1"
 
-"@civic/ethereum-gateway-react@0.7.6":
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-0.7.6.tgz#569080309ada1f1e864def731b9e6fa3165100cb"
-  integrity sha512-dYht2xAxPIGJqlzYL/QmZ9epglNpkqYGd+maGYWJkhI0s2m3zqL1uD/gxqDaM1GKBz4gASMAzTMWTq8wtBb4lw==
+"@civic/ethereum-gateway-react@file:../ociv-gatekeeper/packages/react-component/ethereum/civic-ethereum-gateway-react-v0.7.14.tgz":
+  version "0.7.14"
+  resolved "file:../ociv-gatekeeper/packages/react-component/ethereum/civic-ethereum-gateway-react-v0.7.14.tgz#3b0e4fb28aa8664aff6ed8451ced0f9013826404"
   dependencies:
     "@civic/common-gateway-react" "*"
     "@ethersproject/abstract-signer" "^5.6.0"
     "@ethersproject/providers" "^5.6.2"
     "@identity.com/gateway-eth-ts" "^0.3.1"
     "@identity.com/prove-ethereum-wallet" "^1.0.5"
+    ethers "5.7.2"
 
 "@coinbase/wallet-sdk@^3.5.4":
   version "3.6.3"
@@ -6327,7 +6327,7 @@ ethereumjs-util@^6.0.0:
     ethjs-util "0.1.6"
     rlp "^2.2.3"
 
-ethers@^5.5.1, ethers@^5.7.2:
+ethers@5.7.2, ethers@^5.5.1, ethers@^5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.7.2.tgz#3a7deeabbb8c030d4126b24f84e525466145872e"
   integrity sha512-wswUsmWo1aOK8rR7DIKiWSw9DbLWe6x98Jrn8wcTflTVvaXhAMaB5zGAXy0GYQEQp9iO1iSHWVyARQm11zUtyg==
