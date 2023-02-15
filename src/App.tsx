@@ -14,7 +14,7 @@ import { mainnet, goerli, polygon, optimism, arbitrum, polygonMumbai, sepolia, a
 import { ConnectKitProvider, ConnectKitButton, getDefaultClient } from "connectkit";
 import {GatewayProvider, IdentityButton} from "@civic/ethereum-gateway-react";
 
-const GATEKEEPER_NETWORK = "ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6";
+const GATEKEEPER_NETWORK = "tigoYhp9SpCDoCQmXGj2im5xa3mnjR1zuXrpCJ5ZRmi";
 
 const client = createClient(
     getDefaultClient({
@@ -46,6 +46,8 @@ const Gateway = () => {
         gatekeeperNetwork={GATEKEEPER_NETWORK}
         provider={provider}
         signer={signer}
+        stage="local"
+        gatekeeperSendsTransaction={true}
     >
         <Content/>
     </GatewayProvider>
