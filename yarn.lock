@@ -1080,22 +1080,22 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@civic/common-gateway-react@0.7.0-alpha.0":
-  version "0.7.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@civic/common-gateway-react/-/common-gateway-react-0.7.0-alpha.0.tgz#b91155bd314285fba932f610472066bbcc99e098"
-  integrity sha512-GL+4s9JX6YTUq/qnNP9mxHeK8S0gsWtGSZwBMSgX8dsbhHJHD5BTVsSrS+taTK4EATp6x/SmBkwMX+92kwUCAg==
+"@civic/common-gateway-react@^0.7.0-beta.0":
+  version "0.7.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@civic/common-gateway-react/-/common-gateway-react-0.7.0-beta.1.tgz#fc1043142dc1ac6aa3316c1756af5cb2666b1a68"
+  integrity sha512-9vAZU2iaMz2pJRBwFxQ6omGVLYWgf2h2lafAQ9G9U5bG3RepuxCcNG7jiLz3ZQonqc5FJvWj8muX4alkJ3jQgw==
   dependencies:
     fetch-retry-ts "^1.1.24"
     iframe-resizer-react "^1.1.0"
     ramda "^0.27.1"
     styled-components "^5.3.1"
 
-"@civic/ethereum-gateway-react@0.7.9-beta.3":
-  version "0.7.9-beta.3"
-  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-0.7.9-beta.3.tgz#1a42059843bca622d4b68722ece9d435b8376566"
-  integrity sha512-+hJpW2SYh/OEvcPDDy52fLtyuJD0UFkeC9mV7emDO3exYf2APPkjlF49KflnafHnTeOf39hGfPLqM0pRG3gOyw==
+"@civic/ethereum-gateway-react@0.7.9-beta.5":
+  version "0.7.9-beta.5"
+  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-0.7.9-beta.5.tgz#eea12765f5b286299ee38a71b00f127556905e69"
+  integrity sha512-A3Ss0cvh611UB8pD3yDVZWrkHJ/JwBG7NeOuIVFp+JKqf4MGu71lRWl5mTNOdrCEuzhU3/T7dX0RadBoDvCIfQ==
   dependencies:
-    "@civic/common-gateway-react" "0.7.0-alpha.0"
+    "@civic/common-gateway-react" "^0.7.0-beta.0"
     "@ethersproject/abstract-signer" "^5.6.0"
     "@ethersproject/providers" "^5.6.2"
     "@identity.com/gateway-eth-ts" "^0.3.1"
