@@ -1080,25 +1080,25 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@civic/common-gateway-react@^0.7.0-beta.0":
-  version "0.7.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@civic/common-gateway-react/-/common-gateway-react-0.7.0-beta.1.tgz#fc1043142dc1ac6aa3316c1756af5cb2666b1a68"
-  integrity sha512-9vAZU2iaMz2pJRBwFxQ6omGVLYWgf2h2lafAQ9G9U5bG3RepuxCcNG7jiLz3ZQonqc5FJvWj8muX4alkJ3jQgw==
+"@civic/common-gateway-react@^0.7.0-beta.2":
+  version "0.7.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@civic/common-gateway-react/-/common-gateway-react-0.7.0-beta.2.tgz#67da9d87adf3fca8bafba17014eb3f767d65e67f"
+  integrity sha512-mVthSBY9I47Xi8dOEDbZvk0KdJrwRgZYkht6ta3AdtD3Azn8Cbh4suSFftFXUDy+MX85klSZaKMnUSc6FS9OIA==
   dependencies:
     fetch-retry-ts "^1.1.24"
     iframe-resizer-react "^1.1.0"
     ramda "^0.27.1"
     styled-components "^5.3.1"
 
-"@civic/ethereum-gateway-react@0.7.9-beta.5":
-  version "0.7.9-beta.5"
-  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-0.7.9-beta.5.tgz#eea12765f5b286299ee38a71b00f127556905e69"
-  integrity sha512-A3Ss0cvh611UB8pD3yDVZWrkHJ/JwBG7NeOuIVFp+JKqf4MGu71lRWl5mTNOdrCEuzhU3/T7dX0RadBoDvCIfQ==
+"@civic/ethereum-gateway-react@0.7.11-alpha.0":
+  version "0.7.11-alpha.0"
+  resolved "https://registry.yarnpkg.com/@civic/ethereum-gateway-react/-/ethereum-gateway-react-0.7.11-alpha.0.tgz#801e8e40d54e7b1347cee9ef57c2ad2cca35bd2a"
+  integrity sha512-T/qrZGY5LB2cZIOB61GiAmy3CXAGIWbhWNsEi26iF3WFl1xnGxpPQ3/dnc2borFVBQBpmmc78G1hEoX+FDsgHg==
   dependencies:
-    "@civic/common-gateway-react" "^0.7.0-beta.0"
+    "@civic/common-gateway-react" "^0.7.0-beta.2"
     "@ethersproject/abstract-signer" "^5.6.0"
     "@ethersproject/providers" "^5.6.2"
-    "@identity.com/gateway-eth-ts" "^0.3.1"
+    "@identity.com/gateway-eth-ts" "0.5.5"
     "@identity.com/prove-ethereum-wallet" "^1.0.5"
     ethers "5.7.2"
 
@@ -1653,10 +1653,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@identity.com/gateway-eth-ts@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@identity.com/gateway-eth-ts/-/gateway-eth-ts-0.3.1.tgz#532f617092f53e3c64ccfe60f8c87a93363ef1d5"
-  integrity sha512-CIMoeIorvIh2arDZAsHUZ8WtYAsXxKJlU5oLdbYfNPBIZBdMVouR/DjriQO1DXd1EFXNt41mhqz7VkqzCtcjog==
+"@identity.com/gateway-eth-ts@0.5.5":
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/@identity.com/gateway-eth-ts/-/gateway-eth-ts-0.5.5.tgz#5e2d5dc025a7e7ef934486e9c25831fbdea6e9d0"
+  integrity sha512-b82Te9ReI8p27AZqnkgCPVuSHu1hV8xEdO+yuSVD+f7ad6VYKKp8nO23mW2MgxVSkuMV2sgA3Cwxevzs4UJ9BQ==
   dependencies:
     "@ethersproject/abi" "^5.7.0"
     "@ethersproject/abstract-signer" "^5.7.0"
