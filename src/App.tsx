@@ -44,12 +44,13 @@ const Content = () => {
 }
 
 const useWallet = ():Wallet | undefined => {
-    const { connector } = useAccount();
+    const { connector, address } = useAccount();
     const [wallet, setWallet] = useState<Wallet>();
+    // update the wallet if the connector or address changes
     useEffect(() => {
         if (!connector) return;
         connector.getSigner().then(setWallet);
-    }, [connector]);
+    }, [connector, address]);
 
     return wallet;
 }
