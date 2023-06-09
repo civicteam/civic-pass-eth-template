@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@civic/ethereum-gateway-react": "^0.10.2",
+    "@civic/solana-gateway-react": "^0.12.3",
+    "@civic/multichain-connect-react-core": "0.0.1-beta.6",
+    "@civic/multichain-connect-react-solana-wallet-adapter": "0.0.1-beta.7",
+    "@solana/web3.js": "^1.76.0",
+    "@solana/wallet-adapter-react": "^0.15.32",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.1.1",
     "@types/node": "^18.7.23",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@rainbow-me/rainbowkit": "^1.0.1",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "connectkit": "1.2.0",
@@ -19,15 +24,23 @@
     "ethers": "^5.7.2",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
-    "react": "^18.2.0",
+    "react": "^18.0.2",
     "react-app-rewired": "^2.2.1",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.0.2",
     "react-scripts": "^5.0.1",
     "stream-browserify": "^3.0.0",
-    "typescript": "^4.8.4",
+    "typescript": "^4.1.2",
     "url": "^0.11.0",
-    "wagmi": "0.11.7",
+    "wagmi": "^0.12.13",
     "web-vitals": "^3.0.2"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "constants-browserify": "^1.0.0",
+    "crypto-browserify": "^3.12.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -43,9 +56,11 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "chrome >= 67",
+      "edge >= 79",
+      "firefox >= 68",
+      "opera >= 54",
+      "safari >= 14"
     ],
     "development": [
       "last 1 chrome version",
