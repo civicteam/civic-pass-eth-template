@@ -1,31 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, {useMemo} from 'react';
 import './App.css';
 import logo from './logo.svg';
 import {
-    useAccount,
-    useEnsAvatar,
-    useEnsName, useNetwork,
-    WagmiConfig,
-    WalletClient,
-    useWalletClient,
     configureChains,
     createConfig,
+    useAccount,
+    useEnsAvatar,
+    useEnsName,
+    useNetwork,
+    useWalletClient,
+    WagmiConfig,
+    WalletClient,
 } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
-import { mainnet, goerli, polygon, optimism, arbitrum, polygonMumbai, sepolia, arbitrumGoerli, optimismGoerli } from 'wagmi/chains';
-import { ConnectKitProvider, ConnectKitButton } from "connectkit";
-import {GatewayProvider, IdentityButton, EthereumGatewayWallet} from "@civic/ethereum-gateway-react";
-import { BrowserProvider, JsonRpcSigner } from 'ethers';
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import {publicProvider} from "wagmi/providers/public";
+import {
+    arbitrum,
+    arbitrumSepolia,
+    mainnet,
+    optimism,
+    optimismGoerli,
+    polygon,
+    polygonMumbai,
+    sepolia
+} from 'wagmi/chains';
+import {ConnectKitButton, ConnectKitProvider} from "connectkit";
+import {EthereumGatewayWallet, GatewayProvider, IdentityButton} from "@civic/ethereum-gateway-react";
+import {BrowserProvider, JsonRpcSigner, Signer} from 'ethers';
+import {MetaMaskConnector} from "wagmi/connectors/metaMask";
 
 const GATEKEEPER_NETWORK = process.env.REACT_APP_GATEKEEPER_NETWORK || "ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6";
 
 // obtain the chain from the URL hash, or provide a list of all supported chains
-const chains = { goerli, polygon, mainnet, optimism, arbitrum, polygonMumbai, sepolia, arbitrumGoerli, optimismGoerli }
+const chains = { sepolia, polygon, mainnet, optimism, arbitrum, polygonMumbai, arbitrumSepolia, optimismGoerli }
 const hash = window.location.hash.replace("#", "");
 const selectedChain = chains[hash as keyof typeof chains];
 const clientChains = selectedChain ? [selectedChain] : Object.values(chains)
-
 
 type ContentProps = {
     address?: `0x${string}` | undefined;
@@ -48,36 +57,35 @@ const Content = ({ address }: ContentProps) => {
         {isConnected && <IdentityButton/>}
     </>
 }
-const walletClientToSigner = (walletClient: WalletClient) => {
+export function walletClientToSigner(walletClient: WalletClient): Signer {
     const { account, chain, transport } = walletClient;
     const network = {
-      chainId: chain?.id,
-      name: chain?.name,
-      ensAddress: chain?.contracts?.ensRegistry?.address,
+        chainId: chain?.id,
+        name: chain?.name,
+        ensAddress: chain?.contracts?.ensRegistry?.address,
     };
-  
+
     const provider = new BrowserProvider(transport, network);
-    const signer = new JsonRpcSigner(provider, account?.address);
-    return signer;
-  }
+    return new JsonRpcSigner(provider, account?.address);
+}
 
 const useWallet = (): EthereumGatewayWallet | undefined => {
     const { data: walletClient } = useWalletClient();
-    const [wallet, setWallet] = useState<EthereumGatewayWallet>();
 
-    useEffect(() => {
+    const signer = useMemo(() => {
         // the wallet client chain is set asynchronously, so wait until
-        // it's set before setting the wallet
-        if (!walletClient?.chain) {
-          return setWallet(undefined);
-        }
+        // it's set before creating a signer
+        if (!walletClient?.chain) return undefined;
+
         if (walletClient && walletClient?.account) {
-          const signer = walletClientToSigner(walletClient);
-          setWallet({ address: walletClient.account?.address, signer });
+          return walletClientToSigner(walletClient);
         }
       }, [walletClient]);
 
-    return wallet;
+    return signer && {
+        address: walletClient?.account?.address,
+        signer: signer,
+    };
 }
 
 const Gateway = () => {
